@@ -68,21 +68,18 @@ float x=this->shape.getPosition().x;
 float z=this->shape.getPosition().y;
 float k=this->shape.getSize().x;
 float y=this->shape.getSize().y;
+ this->objective = (objective);
 
-int mX =objective-x;
-int mY=objective-z;
+    Vector2f direccion;
+    direccion.x = objective.x - this->shape.getPosition().x;
+    direccion.y = objective.y - this->shape.getPosition().y;
 
+    float magnitud;
+    magnitud = sqrt(pow(direccion.x, 2) + pow(dir.y , 2));
 
-float direc,mag;
-direc=objective-shape.getPosition().x;
-direc=objective-shape.getPosition().y;
-mag=sqrt(direc.x)^2+(direc.y)^2;
-
-
-speed=(direc.x+direc.y)/(mag.x+mag.y)
-
-
-
+    Vector2f speed;
+    this->speed.x = (direccion.x / magnitud)*2.f;
+    this->speed.y = (direccion.y / magnitud)*2.f;
     /**(5pts)
         Asigna objetivo a la propiedad objective.
         Calcula la dirección hacia el objetivo y la velocidad necesaria para llegar al objetivo:
