@@ -9,7 +9,6 @@ private:
     Vector2f speed;
     Vector2f objective;
     RectangleShape shape;
-
 public:
     Rectangle(Vector2f size);
     Rectangle(Vector2f size, Vector2i position);
