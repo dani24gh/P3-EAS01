@@ -75,7 +75,7 @@ float y=this->shape.getSize().y;
     direccion.y = objective.y - this->shape.getPosition().y;
 
     float magnitud;
-    magnitud = sqrt(pow(direccion.x, 2) + pow(dir.y , 2));
+    magnitud = sqrt(pow(direccion.x, 2) + pow(direccion.y , 2));
 
     Vector2f speed;
     this->speed.x = (direccion.x / magnitud)*2.f;
