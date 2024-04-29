@@ -40,22 +40,17 @@ Rectangle::Rectangle(Vector2f size, Vector2i position)
 
 void Rectangle::update()
 {
-    if(this->shape.getPosition().x + this->shape.getSize().x >800 || this->shape.getPosition().x < 5)
-     {
-        this->shape.setFillColor(Color::Green);
-        this->speed.x *= -1;
-     }else {
-        this->shape.setFillColor(Color::Red);
-     }
-        
-     if(this->shape.getPosition().y -this->shape.getSize().y >= 600 || this->shape.getPosition().y < 5)
-     {
-         this->shape.setFillColor(Color::Green);
-        this->speed.y *= -1;
-     }else {
-        this->shape.setFillColor(Color::Red);
-     }
+    this->shape.move(this->speed);
 
+    if(abs(this->objective.x - this->shape.getPosition().x < 5 && this->objective.y - this->shape.getPosition().y < 5))
+    {
+        this->shape.setFillColor(Color::Blue);
+        speed -= speed;
+        this->shape.move(speed);
+    }  else   
+    {
+        this->shape.setFillColor(Color::Red);
+    }
      
 
     /**(6pts)
