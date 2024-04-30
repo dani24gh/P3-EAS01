@@ -42,9 +42,9 @@ void Rectangle::update()
 {
     this->shape.move(this->speed);
 
-    if(abs(this->objective.x - this->shape.getPosition().x < 5 && this->objective.y - this->shape.getPosition().y < 5))
+    if((this->objective.x - this->shape.getPosition().x < 5 && this->objective.y - this->shape.getPosition().y < 5))
     {
-        this->shape.setFillColor(Color::Blue);
+        this->shape.setFillColor(Color::Green);
         speed -= speed;
         this->shape.move(speed);
     }  else   
